@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    
+
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 2;
+}
+
+form{
+    margin: auto;
+    border: none;
+
+}
+
+input{
+    height: 20px;
+    width: 350px;
+}
+
+label, input{
+    display: block;
+    
+}
+.btn:hover {
+    opacity: 0.6
+}
+
+button{
+    padding: 14px 10px;
+    text-align: center;
+    background: #4CAF50;
+    width: 90px;
+    color: white;
+    margin: 8px 0;
+    border-radius: 1px;
+    border: none;
+    opacity: 1;
+}
+
+#add{
+    margin-left: 150px;
+}
+
+#reset{
+    background-color: red;
+    display: block;
+    margin-left: 10px;
+    
+
+}
+
+#edit{
+    background-color: gray;
+    width: 65px;
+
+}
+
+.btn-edit{
+    width: 60px;
+    opacity: 1;
+
+}
+
+.btn-del{
+    width: 60px;
+    opacity: 1;
+}
+#delete-btn{
+    background-color: #ff0000;
+    width: 65px;
+   
+
+}
+
+#update{
+    background-color: #4CAF50;
+    margin: 20px;
+
+}
+
+
+
+ /* table css */
+
+ .table-box
+ {
+     margin: 50px auto;
+ }
+ 
+ .table-row{
+    display: table;
+    width: 80%;
+    margin: 10px auto;
+    font-family: sans-serif;
+    background: transparent;
+    padding: 12px 0;
+    color: #555;
+    font-size: 13px;
+    border-bottom: red;
+    box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
+}
+.table-head{
+    background: #8665f7;
+    box-shadow: none;
+   
+    color: #fff;
+    font-weight: 600;
+}
+.table-head .table-cell{
+    border-right:none;
+    text-align: center;
+}
+.first-cell{
+    text-align: right;
+    padding-right: 10px;
+}
+.last-cell{
+    border-right: red;
+}
+
+.tbody {
+    text-align: center;
+}
+
+element.style {
+    text-align: center;
+}
+
+
+
+#idmsg{
+    font-size: 15px;
+    width: 350px;
+    color: red;
+    text-align: center;
+    
+}
+
+#namemsg{
+    font-size: 15px;
+    color:#ff0000;
+    width: 200px;
+}
+
+#agemsg{
+    font-size: 15px;
+    color:#ff0000;
+    width: 200px;
+}
+
+#gendermsg{
+    font-size: 15px;
+    color:#ff0000;
+    width: 200px;
+}
+

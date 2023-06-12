@@ -3,110 +3,87 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>JAVA Final Task</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div class="container mt-5">
+		<main>
+			<div class="container">
+					<h2>Employee Portal</h2>
+						<div class="form_container">
+							<form>
+									<div class="id-div">
+										<tr>
+											<td>Employee ID</td></br>
+											<td><input type="text" id="id" class="id" name="name" placeholder="enter ID" ></td>
+											<p id="idmsg" ></p></br>
 
-		
-			<h1 class="sticky"><center>Employee Portal</center></h1>
-				<form method="post" enctype="multipart/form-data">
-					<table>
-						<tr>
-							<td>Employee ID</td>
-							<td><input type="text" name="name" placeholder="enter name" required=""></td>
-						</tr>
-						<tr>
-							<td>Name</td>
-							<td><input type="email" name="email" placeholder="enter your email" required=""></td>
-						</tr>
-						<tr>
-							<td>Age</td>
-							<td><input type="number" name="quantity" placeholder="enter quantity" required=""></td>
-						</tr>
-						<tr>
-							<td>Gender</td>
-							<td>
-								<select name="age" required="">
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-									<option value="other">Other</option>
-								</select>
-							</td>
-						</tr>
-						<tr></br>
-							<td><a href="b.html"><input type="submit" name="submit" value ="Add Emp"></a></td>
-						</tr>
+										</tr>
+									</div>
+									<div class="name-div">
+										<tr>
+										<td>Name</td></br>
+										<td><input type="name" id="name" class="name" placeholder="enter your name" ></td>
+										<p id="namemsg" ></p></br>
+										</tr>
+									</div>
+									<div class="age-div">
+										<tr>
+											<td>Age </td></br>
+											<td><input type="text" id="age" name="age" placeholder="enter age" ></td>
+											<p id="agemsg" ></p></br>
+
+										</tr>
+									</div>
+									<div class="gender-div">
+										<tr>
+											<td>Gender </td></br>
+											<td>
+												<select name="gender" id="gender" >
+													<option value="male">Male</option>
+													<option value="female">Female</option>
+													<option value="other">Other</option>
+												</select>
+												<p id="gendermsg" ></p></br>
+
+											</td>
+										</tr>
+									</div>
+									<div class="buttons-div">
+										<tr></br>
+											<td><button type="button"  class="btn" id="reset" >Reset</td>
+											<td><button  type="button" onclick="addData()" class="btn" id="add" >Add Emp</td>
+											<td><button  type="button"  class="btn" id="update" >Update</td>
+
+										</tr>
+									</div>		
+								
+							</form>
+						</div>
+			</div>
+
+
+
+
+
+			<hr>
+			<div class="table-box">
+					<table  class="table-row" id="crud_table">
+						<thead>
+							<tr>
+								<th  class="table-cell first-cell" data-sort onclick="sortID(0, this)">Id</th>
+								<th class="table-cell">Name</th>
+								<th class="table-cell">Age</th>
+								<th class="table-cell last-cell">Gender</th>
+							</tr>
+						</thead>
+						<tbody class=""></tbody>
+						
 					</table>
-
-				</form>
-
-		</div>
-
-
-
-
-
-		<form>
-			<!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="List of Employee"> -->
-				<table id="myTable">
-			  		<tr bgcolor="#004A7FFF" style="width: 200px;" class="header">
-						<!-- <td>Sr.no</td> -->
-						<td>Id</td>
-						<td>Name</td>
-						<td>Age</td>
-						<td>Gender</td>
-			  		</tr>
-			  		<tr>
-						<?php
-							$conn=mysqli_connect("localhost","root","","a");
-							$counter=1;
-							$sql=mysqli_query($conn,"select * from users ");
-							while ($row=mysqli_fetch_array($sql)) {
-				 				echo '<tr>
-				 							<!-- <td>'.$counter++.'</td> -->
-				 							<td>'.$row['id'].'</td>
-			 								<td>'.$row['name'].'</td>
-				 							<td>'.$row['age'].'</td>
-				 							<td>'.$row['gender'].'</td>
-											<!-- <td><button class="edit-button" onclick="openForm()">edit</button></td>
-											<td><button class="edit-button" onclick="openForm()">delete</button></td> -->
-											<td><a href="" class="btn btn-warning btn-sm edit">edit</a></td>
-
-				 							<td><a href="" class="btn btn-warning btn-sm delete">delete</a></td>
-										</tr> 
-							}
-						?>
-			  		</tr>
-				</table>
-			
-				<script>
-					function myFunction() {
-		  				var input, filter, table, tr, td, i, txtValue;
-		  				input = document.getElementById("myInput");
-		  				filter = input.value.toUpperCase();
-		  				table = document.getElementById("myTable");
-		  				tr = table.getElementsByTagName("tr");
-		  				for (i = 0; i < tr.length; i++) {
-							td = tr[i].getElementsByTagName("td")[2];
-							if (td) {
-			  					txtValue = td.textContent || td.innerText;
-			  					if (txtValue.toUpperCase().indexOf(filter) > -1) {
-									tr[i].style.display = "";
-			  					} else {
-									tr[i].style.display = "none";
-			  					}
-							}       
-		  				}
-					}
-				</script>
-
-		</form>
-
-
-
-		<script href="script.js"></script>
-
+				
+			</div>
+			<script src="script.js"></script>
+		</main>
 	</body>
 </html>
