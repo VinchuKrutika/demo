@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>JAVA Final Task</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container mt-5">
+
+		
+			<h1 class="sticky"><center>Employee Portal</center></h1>
+				<form method="post" enctype="multipart/form-data">
+					<table>
+						<tr>
+							<td>Employee ID</td>
+							<td><input type="text" name="name" placeholder="enter name" required=""></td>
+						</tr>
+						<tr>
+							<td>Name</td>
+							<td><input type="email" name="email" placeholder="enter your email" required=""></td>
+						</tr>
+						<tr>
+							<td>Age</td>
+							<td><input type="number" name="quantity" placeholder="enter quantity" required=""></td>
+						</tr>
+						<tr>
+							<td>Gender</td>
+							<td>
+								<select name="age" required="">
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									<option value="other">Other</option>
+								</select>
+							</td>
+						</tr>
+						<tr></br>
+							<td><a href="b.html"><input type="submit" name="submit" value ="Add Emp"></a></td>
+						</tr>
+					</table>
+
+				</form>
+
+		</div>
+
+
+
+
+
+		<form>
+			<!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="List of Employee"> -->
+				<table id="myTable">
+			  		<tr bgcolor="#004A7FFF" style="width: 200px;" class="header">
+						<!-- <td>Sr.no</td> -->
+						<td>Id</td>
+						<td>Name</td>
+						<td>Age</td>
+						<td>Gender</td>
+			  		</tr>
+			  		<tr>
+						<?php
+							$conn=mysqli_connect("localhost","root","","a");
+							$counter=1;
+							$sql=mysqli_query($conn,"select * from users ");
+							while ($row=mysqli_fetch_array($sql)) {
+				 				echo '<tr>
+				 							<!-- <td>'.$counter++.'</td> -->
+				 							<td>'.$row['id'].'</td>
+			 								<td>'.$row['name'].'</td>
+				 							<td>'.$row['age'].'</td>
+				 							<td>'.$row['gender'].'</td>
+											<!-- <td><button class="edit-button" onclick="openForm()">edit</button></td>
+											<td><button class="edit-button" onclick="openForm()">delete</button></td> -->
+											<td><a href="" class="btn btn-warning btn-sm edit">edit</a></td>
+
+				 							<td><a href="" class="btn btn-warning btn-sm delete">delete</a></td>
+										</tr> 
+							}
+						?>
+			  		</tr>
+				</table>
+			
+				<script>
+					function myFunction() {
+		  				var input, filter, table, tr, td, i, txtValue;
+		  				input = document.getElementById("myInput");
+		  				filter = input.value.toUpperCase();
+		  				table = document.getElementById("myTable");
+		  				tr = table.getElementsByTagName("tr");
+		  				for (i = 0; i < tr.length; i++) {
+							td = tr[i].getElementsByTagName("td")[2];
+							if (td) {
+			  					txtValue = td.textContent || td.innerText;
+			  					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+									tr[i].style.display = "";
+			  					} else {
+									tr[i].style.display = "none";
+			  					}
+							}       
+		  				}
+					}
+				</script>
+
+		</form>
+
+
+
+		<script href="script.js"></script>
+
+	</body>
+</html>
